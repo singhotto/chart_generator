@@ -29,11 +29,11 @@ private:
     uint8_t* pixels;
 
     std::vector<float> data;
+    std::vector<std::string> labels;
 
     void drawChar(char c, int x, int y, Color color, int scale);
     void setPixel(int x, int y, Color color);
     void drawLine(int x1, int y1, int x2, int y2, Color color);
-    void drawXLabels(const std::vector<std::string> &labels);
     void drawBar(int x, int barHeight, Color color);
 public:
     Chart(const std::vector<float>& values);
@@ -46,6 +46,7 @@ public:
 
     void drawAxes();
     void drawBars(Color color);
+    void drawXLabels(Color color);
     void writeBMP(const char *filename);
 };
 

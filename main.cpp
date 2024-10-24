@@ -8,7 +8,7 @@
 int main() {
 
     // Sample data for bar chart
-    int size = 50;
+    int size = 255;
     std::vector<float> values;
     std::vector<std::string> labels;
     values.reserve(size); 
@@ -27,7 +27,7 @@ int main() {
 
     // Draw axes and labels
     chart.drawAxes();
-    chart.drawXLabels(labels);
+    chart.drawXLabels({255, 0, 0});
 
     chart.writeBMP("output.bmp");
 

@@ -44,6 +44,7 @@ Chart::Chart(const std::vector<float> &values, const std::vector<std::string> &l
     barWidth = (chartWidth - (values.size()-1) * spacing)/values.size();
     
     data = values;
+    this->labels = labels;
 }
 
 Chart::~Chart()
@@ -152,7 +153,7 @@ void Chart::drawAxes()
 }
 
 // Draw labels on the X-axis
-void Chart::drawXLabels(const std::vector<std::string> &labels)
+void Chart::drawXLabels(Color color)
 {
     int xPos = marginX;
     const int axisMargin = 10;
@@ -172,7 +173,7 @@ void Chart::drawXLabels(const std::vector<std::string> &labels)
         int textX = xPos + barX;
 
         for(int i = 0;i<label.length(); i++){
-            drawChar(label[label.length()-1-i], textX, height - marginBottom + axisMargin + 7 * i, {255, 0, 0}, 1);
+            drawChar(label[label.length()-1-i], textX, height - marginBottom + axisMargin + 7 * i, color, 1);
         }
         
         xPos += barWidth + spacing;
