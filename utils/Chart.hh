@@ -33,6 +33,8 @@ private:
     void drawChar(char c, int x, int y, Color color, int scale);
     void setPixel(int x, int y, Color color);
     void drawLine(int x1, int y1, int x2, int y2, Color color);
+    void drawXLabels(const std::vector<std::string> &labels);
+    void drawBar(int x, int barHeight, Color color);
 public:
     Chart(const std::vector<float>& values);
     Chart(const std::vector<float>& values, const std::vector<std::string>& labels);
@@ -43,8 +45,6 @@ public:
     void setMaxDataValue(int v);
 
     void drawAxes();
-    void drawXLabels(const std::vector<std::string> &labels);
-    void drawBar(int x, int barHeight, Color color);
     void drawBars(Color color);
     void writeBMP(const char *filename);
 };
